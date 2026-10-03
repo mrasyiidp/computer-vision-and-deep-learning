@@ -1,4 +1,4 @@
 Mode Experiment,Jumlah Data Korban,Avg Feature Distance,Latency (ms)
-feature_extraction,75,11.8169,142.06 ms
-partial_fine_tuning,75,11.8169,142.11 ms
-full_fine_tuning,75,11.8169,174.59 ms
+feature_extraction,75,2.5817,210.94 ms
+partial_fine_tuning,75,2.5817,219.21 ms
+full_fine_tuning,75,2.5817,236.92 ms

@@ -11,16 +11,16 @@ file_paths = df['filename'].tolist()
 if len(file_paths) == 0:
     raise ValueError("Tidak ada gambar yang ditemukan di metadata.csv! Jalankan generate_metadata.py terlebih dahulu.")
 
-# 2. FUNGSI PEMBENTUK FEATURE EXTRACTOR (MOBILENETV2)
+# 2. FUNGSI PEMBENTUK FEATURE EXTRACTOR (RESNET)
 def build_feature_extractor(mode='feature_extraction'):
-    # Menggunakan tf.keras.applications yang kompatibel penuh
-    base_model = tf.keras.applications.MobileNetV2(
+    # Menggunakan pretrained ResNet50 (Bobot ImageNet)
+    base_model = tf.keras.applications.ResNet50(
         weights='imagenet', 
         include_top=False, 
         input_shape=(224, 224, 3)
     )
     
-    if mode == 'feature_extraction':        # Freeze seluruh backbone
+    if mode == 'feature_extraction':        # Freeze seluruh backbone ResNet
         base_model.trainable = False
     elif mode == 'partial_fine_tuning':     # Unfreeze 20 layer teratas
         base_model.trainable = True
@@ -38,13 +38,13 @@ results = []
 modes = ['feature_extraction', 'partial_fine_tuning', 'full_fine_tuning']
 
 print("\n==========================================")
-print("   MULAI PELATIHAN ONE-CLASS DATASET KORBAN")
+print("  MULAI PELATIHAN ONE-CLASS RESNET DATASET")
 print("==========================================")
 
 for mode in modes:
     print(f"\n---> Memproses Mode: {mode.upper()}")
     
-    # Buat feature extractor
+    # Buat feature extractor berbasis ResNet
     extractor = build_feature_extractor(mode)
     
     # Ekstrak fitur visual dari seluruh gambar korban
@@ -74,7 +74,7 @@ for mode in modes:
 
 # 4. TAMPILKAN DAN SIMPAN RINGKASAN HASIL
 df_results = pd.DataFrame(results)
-print("\n=== TABEL HASIL ANALISIS DATASET KORBAN ===")
+print("\n=== TABEL HASIL ANALISIS DATASET KORBAN (RESNET) ===")
 print(df_results.to_string(index=False))
 
 df_results.to_csv('results_summary.csv', index=False)
