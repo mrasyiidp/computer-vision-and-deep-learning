@@ -1,0 +1,17 @@
+==============================================================================
+  PRAKTIK TERPADU MINGGU 4-7 - RET503
+==============================================================================
+  NIM / Nama    : 4222411048 / Muhammad Rasyid Prasetyo
+  Waktu         : 18-10-2026 04:21:31
+  Komputer/user : DESKTOP-1JDV958 / HP
+  Dataset       : dataset_v1  (sidik jari label: BC415676D71D)
+  Pengaturan    : model yolo26n, epochs 30, imgsz 416, batch 16
+==============================================================================
+  Eksperimen     Perubahan        mAP50  mAP50-95      P      R     ms   menit
+  E1_pretrained  -                0.995     0.990  0.997  1.000   18.8    18.2
+  E2_scratch     -                0.977     0.758  0.937  0.934   20.4    17.2
+  E3_tuning      epochs=60        0.995     0.991  0.997  1.000   19.4    34.9
+==============================================================================
+  Model terpilih (mAP50-95 val tertinggi): E3_tuning
+  Hasil di data TEST (sekali saja)       : mAP50 0.995 | mAP50-95 0.986
+==============================================================================

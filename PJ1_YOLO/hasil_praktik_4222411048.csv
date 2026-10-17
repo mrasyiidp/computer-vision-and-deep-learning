@@ -1,0 +1,4 @@
+eksperimen,perubahan,pretrained,mAP50,mAP50-95,precision,recall,inferensi_ms,waktu_latih_menit,imgsz,bobot
+E1_pretrained,-,True,0.995,0.9897,0.9973,1.0,18.78,18.25,416,C:\Users\HP\Documents\Computer Vision\PJ1_YOLO\hasil_praktik\E1_pretrained\weights\best.pt
+E2_scratch,-,False,0.9769,0.7577,0.9366,0.9337,20.4,17.16,416,C:\Users\HP\Documents\Computer Vision\PJ1_YOLO\hasil_praktik\E2_scratch\weights\best.pt
+E3_tuning,epochs=60,True,0.995,0.9905,0.9971,1.0,19.38,34.86,416,C:\Users\HP\Documents\Computer Vision\PJ1_YOLO\hasil_praktik\E3_tuning\weights\best.pt
