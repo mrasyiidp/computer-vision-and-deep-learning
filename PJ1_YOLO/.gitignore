@@ -1,0 +1,6 @@
+__pycache__/
+.vscode/
+*.pt
+PJ1_YOLO/dataset_yolo/
+PJ1_YOLO/dataset_v1/
+PJ1_YOLO/runs/
