@@ -40,6 +40,19 @@ Pengaturan: model `yolo26n`, 30 epoch, imgsz 416, batch 16, dilatih di CPU (AMD 
 | E2 scratch | tanpa bobot pralatih | 0,977 | 0,758 | 0,937 | 0,934 | 17,2 |
 | E3 tuning | epochs=60 | 0,995 | 0,991 | 0,997 | 1,000 | 34,9 |
 
+### Grafik pelatihan
+
+**E1 - pretrained (30 epoch)**
+![Grafik E1](hasil_praktik/E1_pretrained/results.png)
+
+**E2 - scratch (30 epoch)**
+![Grafik E2](hasil_praktik/E2_scratch/results.png)
+
+**E3 - tuning, epochs=60**
+![Grafik E3](hasil_praktik/E3_tuning/results.png)
+
+Dari grafik terlihat E1 dan E3 stabil dengan mAP mendekati 1,0 sejak awal, sedangkan E2 baru mulai belajar setelah sekitar epoch 8 dan mAP50-95-nya masih naik di epoch 30.
+
 Model terpilih berdasarkan mAP50-95 pada data validasi: **E3**.
 Hasil pada data test (sekali uji): mAP50 0,995 dan mAP50-95 0,986.
 
